@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Easy Web Search | Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+<link rel="shortcut icon" href="../icon.png" type="image/png" />
+
+<meta name="viewport" content="device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!-- BOOTSTRAP STYLES-->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- CUSTOM STYLES-->
+    <link href="../assets/css/custom.css" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+
+</head>
+
+
+
+
+<body>
+	<div class="container" style="width:800px;">
+	
+		<h3 class="center alt">&ldquo;Easy Web Search&rdquo; Documentation by &ldquo;Nelliwinne Mohottala&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center"><img src="assets/thumb.jpg" width="80" height="80"></h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 06/17/2016<br>
+					By: Nelliwinne Mohottala<br>
+					Email: <a href="mailto:premasirinelliwinne@gmail.com">premasirinelliwinne@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing Easy Web Search Script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/nelliwinne">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#Description">Description</a></li>
+			<li><a href="#ScriptStructure">Script Files and Structure</a></li>
+			<li><a href="#DBConnection">Database Structure and Setup</a></li>
+		  <li><a href="#Final">Upload and run</a></li>
+		  <li><a href="#Final">Usage</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="Description"><strong>A) Description</strong> - <a href="#toc">top</a></h3>
+		<p>Easy Web Search is engine to use inside a web site. Simple Crawling System is available to submit URLs and Links from submitted URL will be automatically added to search database when admin run crawling. Once crawling is done the links with their contents (Plain text from web link) will be available to search. If the total web site is linked to it's home page, you need jut give home page url to the sytem and run crawling once. You do not need to much work to implement a search system inside your web site. </p>
+	  <p><img src="assets/inline.jpg" alt="HTML Structure" /></p>
+	  <p>&nbsp;</p>
+	  <hr>
+
+		<h3 id="ScriptStructure"><strong>B) Script Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+	  <p>This Editor script contains nearly 10 php files and nearly 3 folders which includes all the libraries. "inc-main.php" is main include file which contains E_All and other functions related to all pages. </p> 
+
+		<p><strong>index.ph</strong>p, search.php and quicksearch.php are the sample usage of the search script.</p>
+<hr>		
+	  <h3 id="ScriptStructure"><strong>C) Database Structure and Setup</strong> - <a href="#toc">top</a></h3>
+      <p>First Create a database in your server and import sql.sql file (at the root folder) to your database. Please  truncate settings and crawl talbes<strong>. Anyway do not delete administrator user from admin table</strong>. .</p>
+        <ul>
+          <li> admin</li>
+          <li> settings</li>
+          <li>crawl</li>
+        </ul>
+        <p>Now change the database connection file at &quot;Connections/saha.php&quot; as follows </p>
+        <p> <code>$hostname_saha = "yourhost"; <br>
+          $database_saha = "yourdbname"; <br>
+          $username_saha = "yourdbusername"; <br>
+          $password_saha = "yourdbpassword"; </code></p>
+        <p>Please note that user password can change from the script and you need to change passwords using admin area. .</p>
+        <p>&nbsp;</p>
+	  <hr>
+		
+		<h3 id="Upload"><strong>D) Upload and Run</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Finalizing the work.</p>
+		
+			<ol>
+			  <li>Exat all the files at &quot;package.zip&quot; to your local folder</li>
+			  <li>Upload all the files to your server</li>
+			  <li>Create Database and Change Databse Connection as explianed above (C).</li>
+				<li>Access your code via web browser</li>
+				<li>You're done</li>
+			</ol>
+		
+		<h3 id="Upload"><strong>E) Usage Instructions</strong> - <a href="#toc">top</a></h3>
+		
+		<h5>Full Page Usage</h5>
+		
+      <fieldset>
+        <legend>PHP Code</legend>
+        <code>&lt;?php require_once('Connections/saha.php'); ?&gt;<br>                   &lt;?php require_once('inc-main.php'); ?&gt;<br>                   &lt;?php require_once('inc.search.php'); ?&gt;</code>
+        </fieldset>
+        
+      <fieldset>
+        <legend>HTML Headers</legend>
+        <code>
+        &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;<br>                     &lt;link href=&quot;fonts/font-awesome/css/font-awesome.css&quot; rel=&quot;stylesheet&quot;&gt;<br>                     &lt;link href=&quot;css/animate.css&quot; rel=&quot;stylesheet&quot;&gt;<br>                     &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot;&gt;  </code>
+        </fieldset>
+        
+      <fieldset>
+        <legend>HTML Body</legend>
+        <code>
+        &lt;div class=&quot;wrapper wrapper-content animated fadeInRight&quot;&gt;                                                &lt;div class=&quot;row&quot;&gt;                   &lt;div class=&quot;col-lg-12&quot;&gt;                      &lt;div class=&quot;inqbox float-e-margins&quot;&gt;                         &lt;div class=&quot;inqbox-content&quot;&gt;                            &lt;div class=&quot;search-form&quot;&gt;                              &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;                                  &lt;div class=&quot;input-group&quot;&gt;                                     &lt;input type=&quot;text&quot; placeholder=&quot;Search Web&quot; name=&quot;q&quot; class=&quot;form-control input-lg&quot; value=&quot;&lt;?php echo @$cid; ?&gt;&quot;&gt;                                     &lt;div class=&quot;input-group-btn&quot;&gt;                                        &lt;button class=&quot;btn btn-lg btn-primary&quot; type=&quot;submit&quot;&gt;                                        Search                                        &lt;/button&gt;                                     &lt;/div&gt;                                  &lt;/div&gt;                               &lt;/form&gt;                            &lt;/div&gt;...<br>
+                   .... <strong style="color:#C30">Copy and Paste Entire Body from sample1.php</strong> ....  </code>
+        </fieldset>
+        
+        
+        <h5>Usage from any other page from web</h5>
+		
+      <fieldset>
+        <legend>HTML Code</legend>
+        <code>
+        &lt;form action=&quot;search.php&quot; method=&quot;get&quot; class=&quot;navbar-form-custom&quot; style=&quot;float:right; position:absolute; right:0; top:0;&quot; role=&quot;search&quot;&gt;                         &lt;div class=&quot;form-group&quot;&gt;                            &lt;div class=&quot;kform inq&quot;&gt;                               &lt;div&gt;                                  &lt;label class=&quot;field append-icon&quot;&gt;                                  &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;q&quot; class=&quot;gui-input&quot; placeholder=&quot;Type your search here...&quot; style=&quot;color: #3c3c3c; background: #fff; border: 1px solid #1c84c6; outline: none; padding: 9px;&quot;&gt;                                  &lt;label for=&quot;q&quot; class=&quot;field-icon&quot;&gt;                                  &lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;                                  &lt;/label&gt;                                  &lt;/label&gt;                               &lt;/div&gt;                            &lt;/div&gt;                         &lt;/div&gt;                      &lt;/form&gt; </code>
+        </fieldset>
+        
+	  <hr>
+		
+		<p>Once again, thank you so much for purchasing this Item. As I said at the beginning, I'd be glad to help you if you have any questions relating to this Script. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on CodeCanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Nelliwinne Mohottala</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <link href="css/materialize.min.css" rel="stylesheet" />
+    <link href="css/icon.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-git.css" rel="stylesheet" />
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: Roboto;
+            font-weight: 300;
+        }
+        
+        h5 {
+            text-align: center;
+            color: rgba(12, 12, 12, 0.8);
+            ;
+            font-weight: 200;
+            font-size: 4rem;
+        }
+        
+        p {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #ef80b8;
+            margin: 5px 0 10px;
+        }
+        
+        .content {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            padding-top: 1rem;
+        }
+        
+        .title {
+            left: 145px;
+            top: 25px;
+        }
+        
+        .list {
+            width: 100%;
+            margin: auto;
+            margin-bottom: 65px;
+        }
+        
+        .list .btn-flat {
+            float: right;
+            width: 150px;
+            padding: 0 10px;
+            margin-top: 40px;
+        }
+        
+        #sortable {
+            list-style-type: none;
+            margin: auto;
+            padding: 0;
+            width: 100%;
+            cursor: move;
+        }
+        
+        #sortable li {
+            padding: 0.4em;
+            font-size: 1.4em;
+            height: 326px;
+            width: 60%;
+            margin: auto;
+            margin-bottom: 45px;
+        }
+        
+        #sortable li span {
+            position: absolute;
+            color: #555;
+            font-weight: 500;
+            top: 265px;
+            left: 20px;
+        }
+        
+        #sortable .video-container iframe,
+        .video-container object,
+        .video-container embed {
+            width: 100%;
+            height: 235px;
+            visibility: visible;
+        }
+        
+        #sortable .video-container {
+            position: relative;
+            width: 100%;
+            height: 235px;
+            padding-bottom: 0;
+        }
+        
+        #sortable p {
+            font-size: 0.8rem;
+            color: #555;
+            font-weight: 500;
+            top: 284px;
+            padding-left: 12px;
+            position: absolute;
+        }
+        
+        .collection {
+            border: none;
+        }
+        
+        .collection .collection-item {
+            background-color: #fff;
+            margin-bottom: 45px;
+        }
+        /* heart button */
+        
+        .favorite-heart {
+            position: absolute;
+            bottom: 26px;
+            right: 20px;
+            cursor: pointer;
+        }
+        
+        .unlike {
+            color: #ccc;
+        }
+        
+        .like {
+            color: #f00650;
+        }
+    </style>
+    <script src="css/jquery-1.12.4.js">
+    </script>
+    <script src="css/jquery-ui.js"></script>
+    <script src="css/materialize.min.js"></script>
+    <script src="css/jquery.mobile-git.js"></script>
+    <script src="css/jquery-ui.min.js"></script>
+    <script src="css/jquery.ui.touch-punch.min.js"></script>
+
+    <div class="content">
+        <h5>Sortable Playlist</h5>
+        <p>(works on touch device)</p>
+        <div class=" list">
+            <ul id="sortable" class="ui-sortable collection">
+                <li class="ui-state-default ui-sortable-handle collection-item avatar z-depth-3">
+                    <div class="video-container">
+                        <iframe src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <span class="title">First Title</span>
+                    <p>Subtitle</p>
+                    <!-- favorite heart button -->
+                    <div class="favorite-heart">
+                        <i class="material-icons  unlike">favorite</i></div>
+
+                </li>
+                <li class="ui-state-default ui-sortable-handle collection-item avatar z-depth-3">
+                    <div class="video-container">
+                        <iframe width="85" height="65" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <span class="title">Second Title</span>
+                    <p>Subtitle
+                        <p>
+                            <!-- favorite heart button -->
+                            <div class="favorite-heart">
+                                <i class="material-icons  unlike">favorite</i></div>
+
+                </li>
+                <li class="ui-state-default ui-sortable-handle collection-item avatar z-depth-3">
+                    <div class="video-container">
+                        <iframe width="85" height="65" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <span class="title">Third Title</span>
+                    <p>Subtitle</p>
+                    <!-- favorite heart button -->
+                    <div class="favorite-heart">
+                        <i class="material-icons  unlike">favorite</i></div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        $(function() {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+
+        //favorite heart like/unlike
+        document.querySelectorAll(".material-icons")
+            .forEach(function(el) {
+                el.addEventListener("click",
+                    function() {
+                        if (this.classList.contains("unlike"))
+                            this.classList.toggle("like");
+                        else this.classList.toggle("unlike");
+                    });
+            });
+
+        // Simple list
+        Sortable.create(simpleList, { /* options */ });
+
+        // List with handle
+        Sortable.create(listWithHandle, {
+            handle: '.glyphicon-move',
+            animation: 150
+        });
+    </script>
+</body>
+
+
+
+
+</html>

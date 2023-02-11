@@ -1,0 +1,18 @@
+>>>>>>>>>>>>>>>>>>>>>THIS IS FOR SEARCH RESAULT THAT WE CHANGED IT BY THE FLY WIDGET
+
+<div class="search-result">
+                              <h3><a href="go.php?id=<?php echo $row_searchResults['id']; ?>"><?php echo $row_searchResults['title']; ?></a> <a class="btn" href="go.php?id=<?php echo $row_searchResults['id']; ?>" target="_blank"><i class="fa fa-external-link-square"></i> </a></h3>
+                              <a href="go.php?id=<?php echo $row_searchResults['id']; ?>" class="search-link"><?php echo substr($row_searchResults['current_url'],0,50);if(strlen($row_searchResults['current_url'])>50){echo "...".substr($row_searchResults['current_url'],-30);} ?></a>
+                              <p>
+                              <?php 
+
+echo searchedSample($database_saha, $saha,$_GET['q'],$row_searchResults['id']);								 
+                                 ?>...
+                             </p>
+                             <p>
+                                <strong>Visits</strong> :  <?php echo $row_searchResults['visits']; ?> <strong>Last Update</strong> : <?php echo $row_searchResults['last_update']; ?>
+                             </p>
+                          </div>
+                          <div class="hr-line-dashed"></div>
+
+                          >>>>>>>>>>>>>>>>>>>>>THIS IS FOR SEARCH RESAULT THAT WE CHANGED IT BY THE FLY WIDGET FNIESHHHHHHH HERE >>>>>>>>>>>>   
