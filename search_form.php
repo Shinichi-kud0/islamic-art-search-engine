@@ -154,7 +154,7 @@ input[type="submit"] {
     10px;
   padding: 0.375rem
     0.625rem;
-}
+ }
 
 .search input[type="submit"]:focus,
 .search input[type="submit"]:hover {

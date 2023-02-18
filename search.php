@@ -14,7 +14,7 @@
       <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
       <link href="css/animate.css" rel="stylesheet">
       <link href="css/style.css" rel="stylesheet">
-      
+
       <link href="css/islarts_cathegories.css" rel="stylesheet">
        <link href="css/my_eight_point_star.css" rel="stylesheet">
        <link href="css/Islartist_logo.css" rel="stylesheet">
@@ -383,11 +383,10 @@ form:nth-child(1) {
                                     
 
    <body>
-
-   <script src="css/jquery-1.12.4.js">
-    </script>
+    <script src="css/jquery-3.6.3.js"> </script>
+   <!--<script src="css/jquery-1.12.4.js"> </script> THIS IS THE RESPONSIBLE FOR NOT WORKING LINKS ON KLICK-->
+   <script src="css/materialize.min.js"></script>
     <script src="css/jquery-ui.js"></script>
-    <script src="css/materialize.min.js"></script>
     <script src="css/jquery.mobile-git.js"></script>
     <script src="css/jquery-ui.min.js"></script>
     <script src="css/jquery.ui.touch-punch.min.js"></script>
@@ -403,9 +402,8 @@ form:nth-child(1) {
                   <a href="search.php" class="btn btn-sm btn-link pull-right"><i class="fa fa-search"></i> Full Page Search</a>
                   <a href="quicksearch.php" class="btn btn-sm btn-link pull-right"><i class="fa fa-search"></i> Page top Search</a> -->
                   <a href="submit.php" class="formbutton"> Submit URL</a>
-                  <a href="index.php" class="formbutton">  Home</a>                  
                   <a href="index.php" class="formbutton"> For Business</a>  
-                   
+
                   <a href="index.php" class="formbutton">  For Home</a>  
                    
                   <a href="index.php" class="formbutton">  MarketPlace</a>
@@ -436,7 +434,7 @@ form:nth-child(1) {
                                     <input type="text" placeholder="Search Web" name="q" class="test" value="<?php echo stripslashes(@$cid); ?>">
                                    
                                    <div class="input-group-btn">
-                                       <button class="fa fa-search search_button" type="submit">
+                                       <button class="btn" type="submit" ><i class="fa-solid fa-magnifying-glass"></i>
                                        Search
                                        </button>
                                     </div>
@@ -522,13 +520,13 @@ Images found for <?php echo $_GET['q']; ?>
 
 
 
-<?php 
+<?php
 $aa=0;
 $totap= (($totalRows_total-($totalRows_total%$lim))/$lim);
 		if(($totalRows_total%$lim)>0){
 			$totap=$totap+1;
 		}
-		
+
 $crrpage=(($stt/$lim)+1);
 $lastpage=floor($totalRows_total/$lim)+1;
 if($totap>=18){
@@ -538,13 +536,13 @@ if($totap>=18){
 	}
 	$allowedmax=$crrpage+9;
 	if($allowedmax<18){
-	if($totalRows_total<18){	
+	if($totalRows_total<18){
 	$allowedmax=$totalRows_total;
 	}else{
-	$allowedmax=18;	
+	$allowedmax=18;
 	}
 	}
-	
+
 }else{
 	$allowedmin=1;
 	$allowedmax=$totap;
@@ -562,7 +560,7 @@ if($allowedmax<100){
 	$roudnoff=6;
 }
 
-?>         
+?>
        
 <a href="<?php if((($aa-1)*$lim)==$stt){?>javascript:void();<?php }else{?>http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['PHP_SELF']; ?>?q=<?php echo (@$_GET['q']); ?>&stt=0<?php }?>">
                                  <button class="btn btn-white pull-left" type="button"><i class="fa fa-chevron-left"></i></button>
@@ -592,14 +590,14 @@ if($lastpage>=$aa){
 <?php }?>
                               </div>
                            </div>
-<?php }?>   
-<!--                        
+<?php }?>
+<!--
 <?php
 /////////////////////////////////
 //////Top Searched Terms/////////
 
  if(@$totalRows_total==0 && @$_GET['q']==""){?>
-<?php 
+<?php
 mysqli_select_db($saha, $database_saha);$query_searchTerms = "SELECT * FROM log GROUP BY log.keyword ORDER BY SUM(log.count) DESC LIMIT 20";
 $searchTerms = mysqli_query($saha, $query_searchTerms) or die(mysqli_error($saha));
 $row_searchTerms = mysqli_fetch_assoc($searchTerms);
@@ -617,7 +615,7 @@ $totalRows_searchTerms = mysqli_num_rows($searchTerms);
 <?php do{?>
                   <a href="search.php?q=<?php echo $row_searchTerms['keyword']; ?>" class="btn btn-link btn-cons"><?php echo $row_searchTerms['keyword']; ?></a>
 <?php } while ($row_searchTerms = mysqli_fetch_assoc($searchTerms)); ?>
-						
+
 					</div>
                 </div>
 			</div>
@@ -636,11 +634,11 @@ $totalRows_searchTerms = mysqli_num_rows($searchTerms);
                     </div>
                 </div>
             </div>               
-                  
+
                </div>
             </div>
       </div>
-     
+
 
 
 
@@ -665,7 +663,7 @@ function getOrder() {
 my_srt_list.addEventListener("dragend", getOrder, false);
 
 
-    
+
         $(function() {
             $("#sortable").sortable();
             $("#sortable").disableSelection();
@@ -683,8 +681,8 @@ my_srt_list.addEventListener("dragend", getOrder, false);
             });
 
   /*    <!--  // Simple list
-        Sortable.create(simpleList, { /* options  
-            
+        Sortable.create(simpleList, { /* options
+
         });
 
         // List with handle
